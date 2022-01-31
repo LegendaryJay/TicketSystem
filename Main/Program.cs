@@ -40,7 +40,7 @@ namespace Main
 
         private static void Main(string[] args)
         {
-            string file = "tickets.csv";
+            string file = "../../../" + "tickets.csv";
             List<Ticket> tickets = new List<Ticket>();
             string choice;
             do
@@ -79,7 +79,7 @@ namespace Main
                 {
                     // create file from data
                     StreamWriter sw = new(file);
-                    sw.WriteLine();
+                    sw.WriteLine("TicketID,Summary,Status,Priority,Submitter,Assigned,Watching");
                     bool continueLoop = true;
                     String input = "";
                     while (continueLoop)
