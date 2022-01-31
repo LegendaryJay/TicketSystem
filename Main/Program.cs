@@ -78,9 +78,11 @@ namespace Main
                 else if (choice == "2")
                 {
                     // create file from data
-                    StreamWriter sw = new StreamWriter(file);
+                    StreamWriter sw = new(file);
+                    sw.WriteLine();
+                    bool continueLoop = true;
                     String input = "";
-                    while (input != "y".ToLower())
+                    while (continueLoop)
                     {
                         // prompt for course name
                         Console.WriteLine("Enter the summary of the ticket");
@@ -116,6 +118,8 @@ namespace Main
                         //ask to repeat
                         Console.WriteLine("Continue? (y/n)");
                         input = Console.ReadLine();
+                        continueLoop = input is "y";
+
                     }
 
                     sw.Close();
